@@ -1,0 +1,23 @@
+1. What are the key characteristics of the service oriented architecture?
+A service provider uploads their service for external access to a service registry, and a service client uses that service registry to search for and access a service provider. When a service client finds the service from the service provider it binds to the service provider and a role is attached to them.
+
+2. What are the key characteristics of a software service?
+Must be modular
+
+3. What are the main differences between WS*(SOAP) Web services and REST Web
+services? Give an example application service that is suitable for realisation by each of
+these service style.
+REST web services could provide access to a database, where clients can request the API to search for, add, edit and delete data. This is seen by how REST web services are concerned with databases usually, and provide CRUD functionality to such a service. WS*(SOAP) web services could provide functionality to redirect users to different websites, or have clients download an app. This is because WS*(SOAP) web services have fixed methods that give them their functionality.
+
+4. Where does microservice differ, compared to SOAP/REST services?
+A microservice is much simpler, more modular and are built with scalability and a light-weight nature in mind.
+
+5. How does service oriented design (SOD) approach decomposition, composition and
+interaction? How does it compare to object oriented design (OOD), in this regard?
+Service oriented design employs decomposition by having its services encapsulate smaller services inside. This is seen with the decomposition of WS*(SOAP) services revealing that they house REST services inside of them, and microservices might also be deployed which are a step even smaller. This sequence of getting smaller is breaking down the design into its lower level parts, or by viewing the service as smaller services encapsulated by larger ones - it can be seen as a composition. SOD approaches interaction in a handful of different ways, but they all revolve around clients sending messages to servers and servers sending messages back.
+
+Object oriented design differs in all this, with their decomposition seen with solutions encapsulating classes which encapsulate objects, or their composition seen in the opposite way. Furthermore, object oriented design offers a much broader range of interactions, with different classes being able to interact with any other class should they please, with each message between classes limited only by the code that was written to supply it.
+
+6. Which Web application architecture styles is most suitable for a Sense-and-Respond
+system? 
+Event-oriented architecture

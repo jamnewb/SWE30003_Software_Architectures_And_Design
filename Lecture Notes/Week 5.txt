@@ -1,0 +1,89 @@
+Coupling and cohesion should be measured for the different parts created during the process of decomposition:
+- Coupling: To measure the inter-dependency between system parts
+- Cohesion: To measure the intra-dependency of a system part
+
+The goal is to measure weak coupling and strong cohesion to ensure that system parts do not rely on each other too hard.
+
+The characteristics of an object include:
+- It is an abstraction of a real world object that you can interact with (messages)
+- Has behavior that can depend on its internal state which can change with certain functions or methods
+- Is a software component that contains data and related procedures
+
+Object actions can be categorized as the following:
+- Processing: What information does it know? What computations does it perform?
+- Interaction: What connections does it maintain? What information does it know?
+- Composition: What computations does it perform? What objects is it composed of?
+
+ Class characteristics include:
+- Common data attributes
+- Common operations
+- Common relationships to objects
+- Common semantics
+
+Classes in UML are created such that:
+- They are 1 box split into 3 rows.
+- Top row contains the name of the class, user-defined properties (abstract, readonly, etc.) and the type of class (interface, etc.)
+- Second row contains properties, where underlined attributes have a class scope
+- Third row contains functions, where functions in italics are abstract and:
+	+ = "public"
+	# = "protected"
+	- = "private"
+
+Objects are shown as rectangles with their name and type underlined in the first row, and with their properties in the second row. Properties do not need to be included in object representations.
+
+In object oriented design, individuals focus too much on static relationships in their diagrams.
+
+Before constructing a OOD diagram, the following questions should be asked:
+- Are all the objects and classes identified?
+- How do the objects interact?
+- What roles and responsibilities do the objects perform?
+
+Object-oriented designs should be iterative, constantly being redrawn to fit changing requirements. (One function deletion or addition could lead to the entire system design being rethought)
+
+Once an object-oriented design is made, questions can be considered to criticize the current design:
+- Are classes collaborating too much or too little?
+- Is a class getting too many or too little data sent to it?
+- Are there groups of classes that could be seen as subsystems?
+
+An object-oriented design diagram could be seen as a more detailed/refined domain model diagram.
+
+Object responsibilities are the knowledge it maintains and provides and the actions it can perform. When documenting responsibilities it is important to remember to specify what an object does not how it does it. Furthermore, do not describe the interface or how an object gets its data, only document conceptual responsibilities.
+
+When assigning responsibilities:
+- Evenly distribute responsibilities between all the objects; avoid the centralization of responsibilities onto 1 object
+- Keep responsibilities close to objects, rather than the client
+- Keep responsibilities general (draw.this, compared to draw(Shape.Rectangle)
+- Keep behavior together with any related information (principle of encapsulation)
+- Keep information about one thing in one place, if multiple objects need access to the same information:
+	= A new object may be introduced to manage the information
+	= One object may be an obvious candidate to manage the information
+	= The multiple objects may need to be collapsed into a single one
+- Share responsibilities among related objects (break down complex responsibilities)
+- Maintaining information is a responsibility (avoid data-holder only classes)
+
+Is-Kind-Of Relationship:
+- Classes share common responsibilities and attributes
+- Often share a common superclass resulting in these commonalities
+
+Is-Analogous-To Relationship:
+- Classes share some similarities indicating a common superclass, however this superclass has not been discovered yet
+
+Is-Part-Of Relationship:
+- Distinguish (don't share) responsibilities of part and of whole
+
+Difficulties in assigning responsibilities suggest:
+- Missing classes in design
+
+Also being able to choose between multiple classes to do the same thing indicates that some of them may not be necessary.
+
+When objects need to use other objects to fulfill a responsibility, this is known as a collaboration.
+
+Collaborations are characterized by:
+- They are client requests to servers (even if they are objects, in this instance an object is known as a client, and another is known as a server)
+- Collaborations are one-directional (client needs something from server, server does not need something from client)
+- Collaborations reveal control and information flow
+- Collaborations can uncover missing responsibilities (if an object is collaborating a lot - maybe it should have the functionality placed on the other object it is calling)
+
+Classes that do not interact with other classes should be discarded.
+
+In a CRC card any responsibilities that collaborate with another class can be mentioned in the right-hand side "Collaborators" column.

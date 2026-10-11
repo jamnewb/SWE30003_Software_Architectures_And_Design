@@ -1,0 +1,44 @@
+🛡️ Applying "Design by Contract" (DbC)
+"Design by Contract" (DbC) is a methodology that applies the metaphor of a commercial contract to software components to enhance reliability by building them on the basis of carefully designed, explicit contracts. DbC is particularly well-suited for object-oriented development and aims to eliminate bugs by precisely defining the obligations and benefits of both a caller (client) and a called routine (supplier).
+
+The Contract and Assertions
+Contract Definition: Just like human contracts, a software contract specifies obligations that each party must fulfill and benefits they are entitled to receive. The use of an assertion mechanism replaces the concept of "defensive programming," which often introduces complexity through redundant checks.
+
+Assertions are the mechanisms used to express contract conditions formally and include:
+
+Preconditions (Require): Express conditions that must be true before a routine is called. A violation indicates a bug in the client (caller).
+
+Postconditions (Ensure): Express properties that are guaranteed to be true after the routine executes successfully. A violation indicates a bug in the supplier (routine).
+
+Class Invariants (Invariant): A property that applies to all instances of a class. It must be satisfied after object creation and preserved by every exported routine of the class.
+
+Division of Labor and Violations
+No Redundancy: DbC is the opposite of defensive programming; it directs programmers to avoid redundant checks by explicitly assigning responsibility for each consistency condition to only one party. The routine body should either check for a condition (using an If statement for special but expected cases) or rely on the precondition, never both.
+
+Assertion Violations are Bugs: Any runtime violation of an assertion is not a special case but always the manifestation of a software bug. If the precondition is not met, the supplier is not bound to do anything (like a courier with a non-compliant package).
+
+Contracts, Inheritance, and Subcontracting
+Inheritance as Subcontracting: In the context of inheritance, a descendant class that redefines a routine is viewed as a subcontractor for the parent class's original routine. To prevent misuse (i.e., "fooling" the client), the subcontractor must honor the prime contractor's promises.
+
+The Rules of Subcontracting: A redefined routine is not allowed to:
+
+Make the precondition stronger (imposing heavier burdens on the client).
+
+Make the postcondition weaker (delivering less than promised).
+
+Compatibility: A redeclaration may weaken the precondition (making it more tolerant) or strengthen the postcondition (delivering better results). This ensures the new version remains compatible with the original specification, even with dynamic binding.
+
+Invariants and Dynamic Binding: Class invariants are inherited and must be preserved by all routines. Static binding (choosing the parent's routine implementation) would be disastrous for a redefined routine in a descendant class because the parent's routine is not required to preserve the descendant's stronger invariant.
+
+Exception Handling
+Failure vs. Exception: Failure occurs when a routine cannot fulfill its contract. An Exception occurs when a strategy for fulfilling a contract has not succeeded (but the routine might have an alternative strategy).
+
+Disciplined Responses: A coherent exception response has only three possible outcomes:
+
+Resumption (Retry): An alternative strategy is available, so the object is put into a consistent state (invariant restored), and the routine is retried.
+
+Organized Panic: No alternative strategy is available, so the object is put into a consistent state, and the routine reports failure to the caller, triggering a new exception.
+
+False Alarm: (Rare, mainly OS/hardware signals) Execution continues, possibly after minor corrective actions.
+
+Rescue Clause: The rescue clause specifies the routine's alternate behavior after an exception. If a rescue clause executes without a Retry, it results in failure (organized panic), passing the exception back to the caller. The primary duty of any rescue clause is to restore the class invariant before giving up or retrying.

@@ -1,0 +1,78 @@
+Different activities are done in order to create a "Requirements document", these include:
+- Feasibility study: Determine if the user's needs can be satisfied with the available technology and budget (is the idea even feasible).
+- Requirements elicitation: Find out the general needs of the client
+	Developers work with customers to find out:
+	= The domain of the application and the domain requirements (requirements imposed by the domain, i.e. bank enforcing that money laundering must be protected against)
+	= The services the system must provide (functional and non-functional)
+	= The constraints
+- Requirements analysis: Requirements are refined, clarified, defined and documented in a form understandable to the customer
+	= This analysis is completed by getting all the stakeholders together and recording their answers regarding what they desire of the specifications, and noting any conflicts or disagreements and bringing the stakeholders together with disagreements to clarify or compromise on their requirements
+	= Ideas can be communicated to stakeholders using:
+		+ Scenarios (descriptions of a use case, in terms of a series of interactions between a user and the system)
+		+ Use cases
+		+ Task descriptions
+		+ Workflows (interdependencies between various user tasks)
+- Requirements specification: Define the requirements in detail (written as a contract between the client and contractor)
+
+Data requirements:
+- Required system states at particular points
+- Input/output formats
+- Defining data characteristics (does data need to be persistent?)
+
+When discussing requirements with users, they may not have great IT knowledge. Therefore, getting users to tell stories about "features" the system should have can be beneficial, as these stories will uncover how these features should work with other features, their specific use cases and their place in the system. These details can then be translated into Scenarios and Use cases to aid in requirements specifications.
+
+Example of a scenario:
+Mary browses the catalogue and adds desired items (chocolate) to the shopping basket. When she has finished shopping, Mary provides her address for delivery, credit card information and then confirms the transaction. The system confirms her payment and e-mails a transaction record.
+
+What happens in the above example if the credit-card fails? This is why its good to create alternative scenarios, or write them as a series of steps to cover all these bases.
+
+Also, achieving a certain system goal or completing an activity in a scenario must be covered by at least 1 user task. If all scenarios are written up and not all the user tasks are included, then they need to be revised for completeness.
+
+In use cases, actors do not need to be human (can be temperature probe).
+
+Also at its core, use cases are simply a diagram of these scenarios - a sequence of steps.
+
+Domain-level requirements is not the product directly interacting with the user through product input/output, it is simply assisting with user activities.
+
+Product-level requirements is the product directly interacting with the user, which can be done through product input/output.
+
+Goal level requirements specify business goals. 
+"Our pre-calculations shall hit within 5%"
+
+Domain level requirements specify the activities that go on outside the product (i.e. in the domain). 
+"Product shall support cost recording and quotation with experience data"
+
+Product level requirements specify what should come in and out of the product. 
+"Product shall have recording and retrieval functions for experience data"
+
+Design level requirements specify interface details between the system and other entities interacting with it (such as users and other systems) and internals of the system. (Mostly focused on how the product provides an interface for the users though.)
+"System shall have screen pictures as shown in app."
+
+Solution specifications can involve identifying the data (variables/entities) and tasks involved with the solution. The data can be displayed in a diagram where boxes denote the different entities and arrows denote their relationships (major tasks can be included, but not really).
+
+In a context of developing an app for a hotel management system, task descriptions can be broken up into rooms:
+- Work area: Reception
+Description of reception, its busyness, users of system and tasks it shall support ("The product shall support tasks 1.1 to 1.5")
+	= Task 1.1
+	Purpose
+	Conditions for trigger
+	Frequency of trigger
+	Critical (in what context does the system begin to experience problems) 
+	Sub-tasks (what does each line of code do)
+	= Variants (different scenarios, for credit card paying - what if card declines?) (also is simply a list of the different scenarios that could occur for each sub-task, denoted by 1a or 1b or 2a with the number associated with a sub-task)
+
+In a task description the purpose, conditions for trigger, frequency of trigger and critical will be in a header box at the top. Below this header, the box is divided into 2 columns, with the "sub-tasks" on the left, with the "variants" below the sub-tasks", and for each sub-task there is a respective "example solution" on the right column, simply stating what the system will do to support the sub-task. "Problems" can be stated below sub-tasks or variants, with variants not being inherently problematic, just a different route the user can take to complete the same action. "Problems" just actually are real problems like in a hotel management system it could be "Guest forgets to return the key" or if they booked in advance "Verification of guest's identity made unclear".
+
+In UML use cases the human and computer are combined in their scenario, however in task descriptions they are not combined, at least at the start, with the split between human and computer being postponed.
+
+In task descriptions, the sub-tasks should exhibit certain characteristics to be good:
+- Should be looked at from a business perspective, not from a technical perspective (non-technical stakeholders should be able to read the sub-tasks and understand exactly what is going on).
+- A goal is reached in each one ("Enter guest name", not "Enter guest name?", as the question mark denotes that a goal may not be reached)
+- Extremely small and concise
+- No technical or programming language
+
+All critical tasks need to be included in the sub-tasks.
+
+Workflows are a more high-level version of task descriptions, with a focus on the actors of each step, dependencies between the steps and the sequencing of the steps. It focuses on documenting the major steps of a process. Also the example solution column should not be a technical one, instead simply stating the physical object used to achieve the sub-task ("web-booking", "electronic keys", "2 invoices").
+
+A difference between task descriptions and use cases is that use cases make assumptions about what the user is going to do (task descriptions have the ability to attach "Problems" that use cases do not)

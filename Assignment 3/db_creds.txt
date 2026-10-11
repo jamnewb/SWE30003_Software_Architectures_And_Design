@@ -1,0 +1,4 @@
+host=feenix-mariadb.swin.edu.au
+user=s104563879
+pwd=mlgPOTATO!1
+sql_db=s104563879_db

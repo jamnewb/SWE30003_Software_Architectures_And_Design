@@ -1,0 +1,46 @@
+There are certain activities that need to be completed throughout the duration of a project, these are known as software development activities (different to phases as they are not sequential):
+- Requirements elicitation - establishes a customer's needs (conversations, discussions) (done in analysis stage)
+- Requirements analysis - ensure requirements are realistic, consistent and achievable (done in analysis stage). Once requirements are finalized, they are added to a "requirements specifications" that is used for the rest of the stages in the SDLC.
+- Design - start thinking about how to implement such a solution
+- Implementation - construct the solution
+- Testing - verify the solution against the requirements
+- Maintenance - repair any defects of the solution and adapt it to new requirements that pop up overtime
+
+ Why do we build Software Systems?
+- To keep/retain customers
+- To increase customer base
+- To improve customer relationships
+- To improve productivity/efficiency (within organization/team)
+- Technology used no longer supported/outdated
+- Changes in environment (legal, social)
+- To achieve business goals
+
+Business goals include:
+- Reduce cost of ownership
+- Improve the quality of the systems compared to its predecessors
+- Improve the capabilities/functionality offered by the system
+- Improve organization's market position
+- Improve external confidence in either the organization or the system
+
+Systems involve a variety of different stakeholders including customers, developers, managers and users. Developers must be able to take in all the views of these stakeholders and prioritize them, and provide a compromise to cater for all of them. 
+
+Goals need to be prioritized as not all of them are completely necessary for the system. This is seen with some goals being known as inherent to the system being developed, or being arbitrary - causing problems.
+
+Domain requirements are imposed by the domain and can be functional or non-functional (banking - prevent money laundering)
+
+Other non-functional requirements include:
+- Product requirements: specify that the solution must behave in a particular way (execution speed, reliability)
+- Organizational requirements: are a consequence of organizational policies and procedures (process standards used, implementation requirements)
+- External requirements: arise from factors which are external to the system and its development process (interoperability requirements, legislative requirements)
+
+Validation vs Verification:
+- Verification: check if the system being built is made according to specifications by constantly checking in with the client (reference point client)
+- Validation: check if the system built is correct by comparing its outputs against what was expected (reference point output)
+
+Decomposition is the process of breaking down a complex software system into lower and lower level parts so that these components can be individually focused on, making them easier to work on. Also known as Divide-and-Conquer.
+
+A model is a simplification of reality. They are created for better understanding of the problem, the domain or the system to be built. They can represent:
+- Structure (static model)
+- Behaviour (dynamic model)
+
+Non-functional requirements determine most structural design decisions, not functional requirements.

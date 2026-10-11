@@ -1,0 +1,27 @@
+1. Discuss briefly three architectural tactics that can be used to address scalability.
+Microservices can be employed for a service oriented architecture. This is because they are small and modular, allowing for multiple to be used in conjunction with each other to scale areas of a design.
+
+A layered architecture can be used to allow for components to be incrementally developed and implemented overtime.
+
+A blackboard architecture can be used to allow for components to be developed more independently of each other, as they only need to communicate with the central repository. Considering this, components can quickly be developed and attached to the design, without much need to consult other objects or change them, aiding in scalability.
+
+2. “Architecture documentation is both prescriptive and descriptive.” What does this
+mean? What are the differences?
+Prescriptive means that the documentation assumes certain things about how the software solution will be developed, despite client needs possibly changing once development begins. Descriptive is relating to its description of how the software solution will be developed, with its designs and requirements.
+
+3. “The system shall exhibit acceptable performance.” This is an example of a common
+requirement for a quality attribute. Why is this not an acceptable requirement, and how
+can it be modified to make it better?
+This is not acceptable as it is not measurable. This is because "acceptable" is a qualitative measure, meaning it cannot be recorded in a numerical fashion. This can be resolved if the requirement was changed to "The system shall have a throughput of at least 100 tps over the course of a month". This suggested requirement is measurable by getting the performance metrics of the system over the course of a month and averaging it.
+
+4. In a scenario where a new architect must take over the architectural responsibilities for a
+project, what documented knowledge, captured by their predecessor, would be
+beneficial?
+The Software Requirements Specifications (SRS) and the non-functional requirements.
+
+5. Reconsider the Bookstore Information System from the Tutorial in Week 10. What kind
+of architectural solution would you put into place in order to (i) enable staff of the
+bookstore to use light-weight tablets to assist customers with their inquiries and (ii)
+enable customers to use their own portable devices to search for books? Please identify
+two solutions and using suitable criteria discuss the benefits/drawbacks of each solution. 
+I would not change my solution, instead only further tailoring my solution to allow usability on tablets and for customers as well. This is because a REST based architecture is already light-weight, and allows for fast CRUD functionality into a database. This is due to the fact that it does not require any fixed methods such as with WSDL.

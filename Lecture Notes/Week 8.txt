@@ -1,0 +1,19 @@
+Large software systems rarely conform to a single architectural style.
+
+The different ways of incorporating multiple architectural styles include:
+- Locationally heterogeneous: The architectural structure of a system reveals different styles in different areas (branches of a main-program-and-subroutines system have a shared data repository)
+- Hierarchically heterogeneous: A component of one style when decomposed is structured according to the rules of a different style (an element of a pipe and filter pipeline is structured in a layered style)
+- Simultaneously heterogeneous: A system may be described using several architectural styles
+
+A reference model is a division of functionality together with data flow between the resulting elements (can be considered as a standard decomposition of a know problem into parts that cooperatively solve the problem)
+A reference architecture is a reference model mapped onto software components and the data flow(s) between these components (i.e. a mapping of system functionality onto a system decomposition)
+
+A reference architecture can also be viewed as a combination of a reference model and an architectural style.
+
+Why use architectures:
+- Architectural styles document existing, well proven design experience
+0 Architectures identify and classify abstractions that are at a higher level of abstraction than simple programming language constructs (and often design patterns) (Random objects and classes -> easy to understand design concept)
+- Architectural styles provide a common vocabulary and understanding for design principles
+- Reference architectures support the construction of software with well-defined properties
+- Guidelines help to choose suitable architectures given the problem domain and/or required quality attributes
+- Architectures help to manage software complexity

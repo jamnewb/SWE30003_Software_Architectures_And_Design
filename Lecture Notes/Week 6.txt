@@ -1,0 +1,89 @@
+Heuristics for System Classes:
+
+Heuristic 2.8 - "A class should capture one and only one key abstraction"
+- Key abstraction = important concept of the domain model
+- If this is violated, we immediately reduce cohesion (intra-dependency)
+
+Heuristic 2.9 - "Keep related data and behavior in one place"
+- Otherwise, unnecessary accessor methods and/or "data-holder" classes will need to be created, increasing coupling (inter-dependency)
+
+Heuristic 3.1 - "Distribute system intelligence horizontally as uniformly as possible, that is, top-level classes of the system should share their work uniformly"
+- One needs to think where the system are created!
+
+Heuristic 3.2 - "Do not create god classes/objects in your system"
+- God class implies many responsibilities, hence significant complexity, hence difficult to understand and maintain
+- God classes are often prone to contain many defects
+
+Heuristic 5.1 - "Inheritance should be used only to model a specialization hierarchy"
+
+Heuristic 5.2 - "Derived classes must have knowledge of their base class (by definition), but base classes should not know anything about their derived classes"
+
+Abstract classes can be used to reduce the amount of commonalities between classes.
+
+Heuristic 5.6 - "All abstract classes must be base classes"
+
+Heuristic 5.7 - "All base classes should be abstract classes"
+- In an inheritance tree, only leaf nodes should be concrete classes, all other nodes are abstract
+- Often a perceived need to violate this
+
+Sub-classes must support their parent's responsibilities.
+
+Heuristic 5.8 - "Factor the commonality of data, behavior and/or interface as high as possible in the inheritance hierarchy"
+- Reduces the amount of classes where specific information is kept
+	= Reduces maintenance overhead later on
+	= May introduce complexity early on
+- Just create abstract classes where classes share responsibilities
+
+Heuristic 5.4 - "In theory, inheritance hierarchies should be deep - the deeper, the better
+
+Heuristic 5.5 - "In practice, inheritance hierarchies should be no deeper than an average developer can keep in his/her short-term memory
+- Assume 5 to 7 levels to be a maximum depth
+- Empirical studies show that hierarchies are rarely deep
+
+Heuristic 5.12 - "Explicit case analysis on the type of an object is usually an error. The designer should use polymorphism in most cases"
+- Case analysis also often reveals misassigned responsibilities
+- Explicit case analysis is checking for the type of an object (if Fruit is Apple or Fruit is Pear or Fruit is Banana)
+
+Heuristic 5.16 - "It should be illegal for a derived class to override a base class method with a method that does nothing."
+- Implies class does not have any responsibility
+
+Within an object-oriented application, objects collaborate to fulfill responsibilities. These collaborations are often described using protocols (interfaces and interaction sequences/dependencies). Each participant in a collaboration plays a role, with the roles either being unbound or fixed (fixed denotes the relationship was defined before runtime). There can be multiple roles in a class, and they denote the different states a class should be in to perform differently (such as a Drawing class having the roles Client, Child, Subject), with each one having their own responsibilities.
+
+Heuristic 4.1 - "Minimize the number of classes with which another class collaborates"
+- Too many collaborators generally implies misassigned and/or incorrectly identified responsibilities
+
+Heuristic 4.3 - "Minimize the amount of collaboration between a  class and its collaborators(s), that is, the number of messages sent"
+- Implies that a collaboration protocol will have to be implemented using "few" methods
+
+A collaboration protocol is the code by which a collaboration is established and occurs.
+
+Heuristic 3.9 - "Do not turn an operation into a class"
+
+Aggregation relates to a relationship between classes where if a class gets deleted, others have to be removed as a result.
+
+Association relates to a relationship between classes where if a class gets deleted, nothing happens.
+
+Heuristic 7.1 - "When given a choice in an object-oriented design between a containment relationship and an association relationship, choose the containment relationship" (containment = aggregation)
+- Reduces the amount of exposure of internals of a class
+
+Externally visible properties of an object define its abstract state (Stack: size, order of elements, top element)
+
+Internal representations of an object define its concrete state.
+
+Clients should only ever rely on an object's abstract state, not its concrete state. Object equality should only ever be defined over the abstract, but not concrete state (objects should only be compared for equality - object = object, if it is doing so with their abstract states, not their concrete state)
+
+At their core objects have 2 types of methods that can be called on them:
+- Queries (get a result from an object, but do not change its state)
+- Commands (change objects state but do not return a value other than termination)
+
+Contracts are formal agreements between objects for a responsibility. These contracts can contain:
+- Pre-conditions (comes before an action has taken place - "if object.length > 5")
+- Post-conditions (comes after an action has taken place - "if updatedObject.length > 5")
+- Invariants
+
+The service consumer must ensure that the pre-condition is met
+	- No obligation for the provider to do anything otherwise
+The service provider must ensure that the post-condition is met
+	- No obligation for the consumer to do anything otherwise
+	- Any errors during the service must be notified to the consumer
+

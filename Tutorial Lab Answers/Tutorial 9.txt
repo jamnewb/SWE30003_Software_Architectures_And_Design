@@ -1,0 +1,41 @@
+1. A layered software structure sounds like a good structure to use for incremental
+development. Discuss benefits and drawbacks of a layered structure for incremental
+development.
+A layered software structure is a structure in which components are developed modularly, which increases cohesion through decoupling. Furthermore, in a layered pattern every component is able to receive services from the component below it, however needs to provide services to the components above it - hence the name layered pattern. This can in a way further support incremental development, as if each component is developed sequentially with the next component in mind, then it is great for that. However, should a component be desired to be developed that needs to be fitted in the layered pattern closer to the bottom, then each component above it needs to be rethought in their implementation which does not support incremental development.
+
+
+2. Name and describe two architectural styles that can be used to improve the
+maintainability of a system, and how those two architectures specifically aid
+maintainability.
+The broker pattern improves the robustness of a system by allowing requests to be discriminated between or rejected. This means that in situations where the server would be getting overloaded with requests and experience a failure, the broker can reject these requests and keep the server running.
+
+The pipe-and-filter architectural style can also be used to improve the robustness of a system. This is through the style being centered around data being refined and clarified through getting processed by different "filter" components. This increases data integrity and decreases the risk of problematic data being processed by the rest of the system - decreasing faults.
+
+The broker style improves the maintainability of a system. This is seen through how the broker discriminates between client requests, therefore if errors are being experienced, the broker can be checked for which requests are failing - thereby finding out the clients responsible for the faults. This can aid in the ease to fix these failures.
+
+The pipe-and-filter architectural style can also aid in the maintainability of a system. This is can be seen with how it sequentially processes data, therefore debugging is helped because the data can be watched as it goes from component to component, and if it experiences an error at a certain "filter", then the component responsible is identified and the issue can be resolved.
+
+3. What are the coupling and cohesion characteristics of the following architectural styles:
+a. Layered
+High cohesion
+Low coupling
+This is because components are mostly independent of each other - however still rely on the layer below.
+
+b. Blackboard
+High cohesion
+Low coupling
+This is because components are mostly independent of each other - however still rely on the repository.
+
+c. Dataflow
+Low cohesion
+High coupling
+This is because each component involved relies on other components to ensure the data is processed correctly so it can be used.
+
+d. Peer-to-Peer
+Low cohesion
+High coupling
+This is because the peers rely on the other peers to establish a connection and execute the solution.
+
+4. What is it about patterns that make them useful to different systems? In contrast, why are
+pattern implementations for specific applications rarely reusable? 
+Patterns contain general ideas with the specifics left out so they can be applied to different systems, making them highly useful. In contrast, if a pattern were highly specific, it would eliminate all the systems that it could be applied to who do not implement the details the pattern specifies, resulting in a pattern that can rarely be reused.

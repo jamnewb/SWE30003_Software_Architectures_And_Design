@@ -1,0 +1,22 @@
+The core idea is that software architecture is the primary place to address quality attributes, which are non-functional properties critical for a system's long-term success, unlike functionality which just defines what the system does.
+
+Quality Attributes vs. Functionality
+A Quality Attribute (QA) is a measurable or testable property indicating how well a system satisfies stakeholder needs beyond its basic function, measuring the product's "utility" along some dimension. Systems are often redesigned not because they lack functionality (the system's intended work), but because they fail to deliver on key quality attributes like modifiability, performance, or security.
+
+Functionality does not determine architecture; many architectures can satisfy the same functional requirements. While functionality defines what a system does, quality attributes describe how well it does it and are achieved by mapping functionality onto structured architectural elements.
+
+Specifying QA Requirements with Scenarios
+General quality attribute definitions are often untestable (e.g., "the system must be modifiable"), and discussions can suffer from overlapping vocabularies (e.g., "event," "attack," and "fault" might describe the same occurrence). To address this, QA requirements should be specified using clear, testable, and unambiguous quality attribute scenarios.
+
+A QA scenario has six parts: the Stimulus (the event or action), the Stimulus Source (where it comes from), the Environment (the context or state of the system), the Artifact (the target of the stimulus), the resulting Response (the activity performed), and the Response Measure (the testable metric).
+
+Achieving QAs with Patterns and Tactics
+Architects achieve required quality attributes using patterns and tactics. A tactic is a single design decision that directly influences the achievement of a QA response (e.g., a specific scheduling strategy to improve performance).
+
+An Architectural Pattern describes a proven architectural solution for a recurring design problem and typically bundles multiple tactics together, often requiring trade-offs among competing quality attributes. Tactics are essential for adapting existing patterns or constructing new design fragments when no perfect pattern exists.
+
+Analysis and Design
+Because achieving one QA often negatively affects others (e.g., portability techniques introduce overhead that hurts performance), designing an architecture requires making appropriate trade-offs among competing quality attribute requirements. This process is crucial for preventing architecture debt—the deterioration of quality over time due to suboptimal development decisions.
+
+A useful lightweight analysis tool is the tactics-based questionnaire, which helps an architect or analyst systematically evaluate the architecture's support for QAs by examining which tactics are used, how they are realized, and what risks or rationales are involved.
+

@@ -1,0 +1,67 @@
+Quality is defined as:
+Reaching the totality of the characteristics that directly affect the entity's ability to satisfy the specified requirements or implied needs.
+
+Software Quality includes:
+- Conformance to explicitly stated functional and non-functional requirements
+- Conformance to explicitly documented development standards
+- Conformance to implicit characteristics that are expected of all professionally developed software
+
+There is tension between customer quality requirements and developer quality requirements and finding a balance is crucial.
+
+Quality attributes apply both to the product and the process:
+- Product - what is delivered to the customer
+- Process - produces the product
+
+A quality process is more likely to lead to a quality product more often.
+
+Quality Attributes can be categorized as either:
+- External: Derived from the relationship between the environment and the system
+	= In other words, it requires something to interact with the system to get the results recorded for the attribute; you can see the thing for the results visually (reliability - errors, usability - user using the system)
+- Internal: Derived immediately from the product or process description
+	= Internal quality leads to external quality
+	= Examples include efficiency and operability 
+
+McCall's Quality Model involves external quality attributes being attributable to the combined effects of internal quality attributes:
+- Ex. Correctness (Int. Traceability, completeness, consistency)
+- Ex. Reliability (Int. Consistency, efficiency, error tolerance)
+- Ex. Usability (Int. Operability, training, communicativeness)
+
+Quality Attribute Scenarios involve testing the system to look for its most outstanding non-conformance to attributes, and they aid in the identification of quality attributes to focus on.
+
+This can be done by picking a number of non-functional requirements and testing them against the user tasks and recording their results.
+
+Quality attributes can be verified and validated such like:
+- Verify - check in with client about quality attributes
+- Validation - check if the tests make sense
+
+Quality attributes need to be traceable, this means:
+- Where did the quality attribute come from? Does it originate from a business goal? How high of a priority is the attribute to the client?
+- Where in the solution is this attribute addressed? What implications does the attribute have if its current implementation has been changed?
+
+Quality criteria for a solution requirements specifications (SRS):
+- Correctness
+- Traceable
+- Completeness
+- Consistency
+- Verifiability
+- Unambiguity
+- Ranked by priority?
+- Modifiability
+- Understandability
+
+CRUD checks can be productive, as an extra bottom row can be added "missing", where any CRUD letters can be put in the respective "missing" field if they have not been found in any of the above rows for a certain column.
+
+Software Requirements Specifications (SRS) includes:
+- Introduction
+- System goals/business goals
+- Data requirements
+	= Domain model
+- Functional requirements
+	= Include handling of special cases
+- Non-functional requirements
+- Evidence of validation
+	= Reviews
+	= Confirmation
+	= CRUD Check
+	= Scenarios
+

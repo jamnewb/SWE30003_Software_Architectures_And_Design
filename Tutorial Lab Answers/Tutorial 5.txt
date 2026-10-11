@@ -1,0 +1,64 @@
+Please carefully read the brief description of an “Automated Attendance and Access Control”
+system given below. Form groups three to four students and discuss the following questions:
+1. Identify the goal(s) and main objective(s) of the described system.
+The main objective is to accurately record student attendance using a swipe-card based method.
+The goals are:
+- To reduce manual processing
+- Get more attendance records for individual classes
+- Swipe-cards to be used for door access to facilities in the campus such as computer labs and project rooms.
+
+
+2. Identify the domain (data) model for the desired system.
+The swipe-card machine, the server getting the data from the machines, the computers getting the data from the servers and the cards interacting with the machines.
+
+3. Identify and briefly describe all user tasks that such a system must be able to support.
+NOTE: most of the required tasks are not actually mentioned in the brief description but
+are implied by the purpose of the system.
+Students using another student's card to swipe in for them.
+Broken cards.
+Stolen cards.
+Multiple swipes of the same machine at the same time by the same person.
+CRUD database control.
+
+4. Given the users tasks in the previous step as well as any domain knowledge you have,
+identify and formulate three to five different non-functional requirements/quality
+attributes for the system. Also, discuss how you would go about verifying these quality
+attributes.
+Security:
+"There must be no critical breaches of the database over a 1 year period. Pen tests need to be executed once every 2 months, and system must not have over 2 vulnerabilities discovered in a single one."
+
+Usability:
+"Teachers must be able to understand and effectively use the software to view attendance records within 1 hour of play time."
+
+Responsiveness:
+"The card machines must respond to swipes within 1 second."
+
+5. Are there any issues in regards to this system that you have not identified in (2) and (3),
+but are of concern to you in the given environment?
+Teachers using the database maliciously.
+
+6. (Optional) Think about possible solutions to the software side of the system (you can
+ignore any hardware issues etc. for this question).
+
+This solution could be implemented using the broker design pattern which uses a client-server architecture. This would be seen with all the attendance records being added to and stored in a server. This server would be accessed by each of the card machines and certain computer's with the software to interact with this data. The broker would then discriminate between card machines to ensure that they are prioritized in adding data to the server, while the computers could access the server when no cards are currently executing.
+
+
+
+
+
+
+
+
+
+Automated Attendance and Access Control System
+Presently, Swinburne University of Technology tracks student attendance, where required, by
+physical signature on the attendance paper circulated during lectures, tutorials, or labs. This
+is not only time consuming, but also not effective as a student may ask someone to sign on
+their behalf. Therefore, the university would like to adopt a swipe-card based attendance and
+access control system. Initially, this system should be used to track the attendance of students
+in lectures, tutorials and/or laboratory sessions. Such a system is expected to reduce manual
+processing in order to get (more) complete attendance records for individual classes. At a
+later stage, the system should also be used for door access to facilities in the campus such as
+computer labs, project rooms and others.
+As a result, you are asked to carefully elicit and specify the requirements for such an
+“Automated Attendance and Access Control” system. 

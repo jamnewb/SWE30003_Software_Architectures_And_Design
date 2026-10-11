@@ -1,0 +1,52 @@
+Week 2: Based on Week 1 lecture material and readings & in your own words, characterize the difference between verification and validation and discuss where in the software development lifecycle (SDLC) verification and validation activities should be conducted, respectively.
+
+Verification involves ensuring that the solution is being developed according to the requirements set out by the client. This occurs throughout all phases of the SDLC, including Analysis, Design, Development and Evaluation.
+
+Validation involves ensuring that the final product runs according to tests made for the evaluation of the solution. This occurs during the evaluation stage of the SDLC.
+
+
+Week 3: Describe the difference between Use Case diagrams and Task Descriptions. What are the advantages of using Task Descriptions as opposed to User Cases? Provide a situation where Task Descriptions are more suitable for use than Use Case Diagrams.
+
+In task descriptions, the external view of an action taking place can be seen in the "subtasks" column, with the solution's response to such an action being documented in the "example solution" column. This results in a split view where the actions and the solution responses are both documented separately. In use case diagrams there is no split view of the actions and their solution responses. Furthermore, use case diagrams follow a sequential line of actions and events, without any ability to display what different actions could elicit on the same task. Task descriptions allow for such variations to be documented, with a "variation" section at the bottom for variations of actions that may occur for different tasks.
+
+
+Week 4: Why can quality attributes, in general, NOT be considered in isolation? Give two examples of quality attributes that impact other quality attributes for a system under consideration.
+
+Scalability greatly affects maintainability. This is seen with a system that has been scaled-up or scaled-out having a lot more components and subsystems involved in such a solution. This increase in components leads to much greater chances for vulnerabilities to be discovered, and overall scouring a bigger system to ensure its security takes a lot longer compared to a smaller system.
+
+Security affects availability. This is seen with greater security measures such as MFA disallowing certain users from accessing the service, as particular individuals may not want to enable such an authentication method or do not have the means to do so for the lack of a phone or other. This blocking decreases availability.
+
+
+Week 5: Guy Steele said in "Growing a Language" that a good programmer in these times does not just write programs, he/she builds a working vocabulary. Provide examples and explain this statement.
+
+This can be seen with how programs need clear vocabulary to be efficiency communicated and developed. This is seen with how in terms of reliability, the program might experience a "failure" and cease functioning. In contrast however, when experts talk about security in relation to a system, the same event may be described as an "attack", or generally when developing an app, the same event could be stated as an "error". These different words to convey the same meaning inhibit developers' ability to speak clearly about a software design, and as a result the need for a consistent, meaningful and productive language to be able to communicate these ideas is ever increasingly necessary.
+
+
+Week 6: In what way are objects, the artificial building blocks of a machine or software system, similar to a living, biological organism? What role do they play in helping us to understand and think about a problem?
+
+In programming, classes can be abstract, requiring different "children" classes to implement their own versions of these abstract functions. This leads to a parent class and child class dynamic, similarly to real life.
+
+
+Week 7: Consider the situation of designing a Chess application. Would you model a Queen to be a multiple heir of Rook and Bishop? If so, why? If not, why not and how would you model the commonalities of Queen, Rook and Bishop? Which heuristic(s) can help you in making a decision?
+
+I would use heuristics 5.4 and 5.8 which state that inheritance should be used where applicable, and that inheritance trees should be deep as possible. Implementing these heuristics into the chess application would mean that the Queen would be a multiple heir of the Rook and Bishop. This could be seen with the Rook moving horizontally and vertically, and the Bishop moving along diagonals. Should these pieces have their own classes associated with them, with their own movements defined, then the Queen should inherit from these classes to make her own movement simply a child of the combined Rook and Bishop movements, as the Queen can move along straight lines or diagonals.
+
+
+Week 8: What is the difference between roles and classes in a Design Pattern? Are they the same thing? Pick two design patterns and identify the different classes and roles.
+
+Roles are a set of responsibilities a class is assigned, with the responsibilities outlining the functionality the class should be able to take on. Classes are simply a template by which objects are created. The template method design pattern involves a "Document" class with its role relating to the CRUD functionality that a document should take on, and it also involves an "Application" class whose role concerns itself with opening these documents externally. The command pattern involves two classes where one has a role to encapsulate a request, while the other's role executes that request.
+
+
+Week 9: Would a messenger application be considered as peer to peer or client/server architecture considering communication is generally direct to the other peer once the IP address of a remote user has been identified by the server? Justify your answer.
+
+It would be considered a client/server architecture. It is not considered P2P as it does not only involve the parties involved with a private message. This is because the message needs to be sent to a server to be transmitted, as the server needs to be able to review the sent text for moderation purposes. Furthermore, for other functionality such as inviting individuals to a group chat, or viewing the terms and conditions, a server needs to be able to get and send those components back to the user, something someone else's computer could not simply send in a P2P architecture.
+
+
+Week 10: Discuss the differences, advantages, and disadvantage of data-centred and data-flow architectures. Give examples where either of these two styles would be applicable.
+
+Data-centered architectures differ from data-flow architectures in the sense that data-centered architectures require a central repository that all components send or receive data from. Data-flow architectures do not exhibit this characteristic, instead featuring a pipeline where data sequentially goes through "filters" to process the data until a completion is met. Both architectures have the advantage of being loosely-coupled, this is seen with how in both architectures the components do not rely on many other components, with the only the repository relied on in the data-centered architecture. A disadvantage of data-centered architectures is that considering all components communicate with the central repository, that repository can become a major bottleneck or vulnerability. A disadvantage of a data-flow architecture is that with the sequential process involved, components do rely on each other to an extent, inhibiting maintenance.
+
+
+Week 11: Discuss the relationships (commonalities and differences) between the concepts of software service, SOAP web service, REST web service, and microservice.
+
+All the concepts exist to provide a service either externally or internally. This is seen with SOAP and REST allowing end-users to interact with a service over the web, a software service providing the means to do so over software, and microservices extending their functionality to other services to further their functionality or quality attributes.

@@ -1,0 +1,110 @@
+What is a software architecture?
+- A software architecture is a pictorial representation of an IT system
+- It acts as a blueprint for the IT system. It provides an abstraction to handle system complexity, and allows communication to be established and mechanisms to be coordinated among different components
+- It also helps a structural solution meet the operational and technical requirements, whilst meeting the quality attributes as well
+- At its core it is concerned with defining the requirements that affect the structure of the application
+
+1. Layered Pattern:
+- Used to structure programs that can be decomposed into groups of subtasks, where each group is at a particular level of abstraction
+- Each layer provides services to the next higher layer
+- The most common layers found in this architecture are as follows:
+	= Presentation layer (UI layer)
+	= Application layer (service layer)
+	= Business logic layer (domain layer)
+	= Data access layer (persistence layer)
+- It is commonly used to make general desktop applications and e-commerce web applications
+- Call-backs may be used to communicate to higher layers
+- Layers are constrained so elements can only communicate with other elements in the same layer or elements of the layer below
+- Supports more independent development of sub-systems considering when a layer interface changes only the adjacent layer is affected.
+- Layers use services of the layer below, and provide services to the layer above
+
+2: Client-server pattern
+- Consists of a server and multiple clients
+- Functions by clients requesting the server for services, and the server provides them at its own discretion
+- Used in online applications
+Advantages include:
+- Distribution of data is straightforward
+- Effectively uses networked systems, therefore may require cheaper hardware
+- Easy to add new servers or upgrade existing ones
+Disadvantages include:
+- No shared data model so sub-systems use different data organization
+- Data interchange may be inefficient
+- Redundant management in each server
+- May require a central registry of names and services - it may be hard to find out what servers and services are available
+
+3. Master-slave pattern
+- Consists of a master component and multiple slaves
+- Work is distributed across slave components
+- Slave components are identical
+- Used in database replication methods and situations where peripherals are connected to a bus in a system
+
+4. Event-bus pattern
+- Main component are events
+- Events are made up of 4 parts:
+	= Event source
+	= Event listener
+	= Channel
+	= Event bus
+- On the diagrams messages are sent by "sources" onto a particular channel (1, 2, etc.) on the event bus, and "listeners" subscribe to a particular channel to get notified of those messages
+- Used in Android development and widely in developing notification systems
+
+5. Pipe-filter pattern
+- Used to structure systems which produce and process a stream of data
+- Data goes through pipes into filters for processing data (source--pipe--[filter]--pipe--[filter]--pipe--source)
+- The pipes are used for buffering or synchronization purposes
+- Used in building compilers and defining workflows in bioinformatics
+
+6. Broker pattern
+- Used to structure distributed systems with decoupled components
+- These components can interact with each other through remote service invocations
+- The broker is responsible for the coordination of communication between the components
+- This is seen in a structure where a client has to be connected to a server, but there are multiple servers, and the broker gets the client request and decides when are where to connect that client to a server
+- Used in message broker software such as Apache Kafka and JBoss messaging
+
+7. Peer-to-peer pattern
+- Components are known as peers
+- Peers can either be in the form of:
+	= Clients, requesting services from other peers
+	= Servers, providing services to other peers
+	= Both
+- Peers can change their role dynamically
+- Peers changing roles and being both clients and servers is what makes peer-to-peer private messaging possible
+- Widely used in file-sharing networks, multimedia protocols & various blockchain-based products
+- In a P2P network, tasks (e.g. sharing audio/video) are shared amongst the loosely interconnected peers, who each make a portion of their resources available to other peers without centralized coordination
+
+8. Model-View-Controller (MVC) Pattern
+- Divides an application into three parts:
+	= Model - contains the core functionality and data
+	= View - displays the information to the user (more than one view may be defined)
+	= Controller - handles the input from the user
+- This is done to hide the internal workings of an application from the ways it is viewed and given input for
+- Basically just creates an interface of the application - allows for interaction with it without needing to know its innerworkings
+- Decouples components and allows for efficient code reuse
+- Used as the foundation for things like Django and Rails
+
+9. Interpreter pattern
+- Used for designing components that interpret programs written in a dedicated language
+- This architecture is used to evaluate lines of programs known as sentences or expressions
+	= This is accomplished by having a dedicated class for each symbol of the language
+- It is used in database query languages such as SQL
+
+10. Blackboard pattern
+- Used in situations where no deterministic solution strategies are known
+- This architecture consists of the following components:
+	= Blackboard - a structured global memory containing objects from the solution space
+	= Knowledge sources - specialized modules with their own representation in the diagram
+	= Control component - selects, configures and executes modules
+- All components have access to the blackboard (hence why it is a GLOBAL memory space)
+- Components may create objects that get added to the blackboard
+- Components look at the data in the blackboard and may find patterns that match with the existing knowledge source
+- Used in apps that use speech recognition, vehicle identification and tracking (basically any application that "learns" your "something" overtime that isn't AI)
+Disadvantages include:
+- Components must agree on a repository data model
+- Data evolution is difficult and expensive
+- No scope for specific management policies
+- Difficult to distribute efficiently
+
+Event-driven architecture:
+- Components respond to external events, being notified by other components
+- Interrupt-driven models detect interrupts with an interrupt handler and pass that data to another component for processing
+- Broadcast models broadcast an event to all sub-systems, and those who can handle the event may do so

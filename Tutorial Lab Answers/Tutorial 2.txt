@@ -1,0 +1,23 @@
+1. What are the types of business drivers/goals for software systems?
+In general, what is the point of having software systems?
+Who sets the business goals? Are all business goals consistent and equal?
+
+Business goals are set by the business owner and their types may include those concerned with the performance of their software or the totality of the requirements specifications that were met by the software. The point of software systems is to provide those using it with access to a service, whether that be a web service or a software service. It also provides the means by which to connect subsystems together to achieve a comprehensive, complex solution that can handle all the client's needs.
+
+
+2. What are the types of requirements for a software system?
+What are the types of non-functional requirements?
+Requirements are either functional or non-functional. Functional requirements are characterized by being concerned with the operations of the software solution, and how well the system functions according to the requirements set out by the client. Non-functional requirements are characterized by being associated with quality attributes that measure how well certain aspects of the system satisfy the client. This can be seen with quality attributes such as "robustness" that measure the amount of errors a system faces, and "usability" that measure how quickly it takes a user to understand the controls of the solution.
+
+3. What is software design?
+What are considered in software design?
+Software design is the means by which to provide a blueprint for developers to follow to create a software system according to client requirements. It also provides a means by which to communicate software system ideas to stakeholders who may not be so technical. Software design considers client requirements, architecture styles, design patterns, and classes and objects.
+
+
+4. What is the role of “model” in software design?
+What are the differences between model and reality?
+Why do we use model?
+Models are used to bridge the gap between non-technical stakeholders and developers, as they are abstractions of more complex software structures and components that are easier to understand without knowledge of the innerworkings of the solution.
+
+5. What are the main drivers for the structural design of a software system? 
+Non-functional requirements.

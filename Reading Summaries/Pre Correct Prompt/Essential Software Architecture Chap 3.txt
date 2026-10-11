@@ -1,0 +1,16 @@
+🎯 Software Quality Attributes Summary
+Quality Attributes and Requirements: Software quality attributes like scalability, security, and performance are crucial non-functional requirements that dictate how an application achieves its functions. Quality attribute requirements must be concrete and precise (e.g., "scale to 10,000 users"), as vague statements like "must be scalable" are architecturally useless and immeasurable.
+
+Performance: This attribute measures the work an application performs in a given time and is often quantified through Throughput (transactions per second), Response Time (latency), and meeting Deadlines (completion within a time limit). Designers must distinguish between average and peak requirements, as designing for peak load is critical for applications like betting or high-volume financial systems.
+
+Scalability: Scalability describes how well a design copes when the size of a problem aspect, such as request load, simultaneous connections, or data size, increases. Architectures can achieve scalability through "scale up" (adding resources to a single machine) or "scale out" (distributing the application across multiple machines), ideally without major architectural changes.
+
+Modifiability: This quality measures the ease, cost, or effort required to change an application to meet new functional or non-functional needs during its lifetime. Modifiability is assessed by considering likely change scenarios and ensuring modifications are isolated to single, loosely-coupled components to minimize expense and ripple effects.
+
+Security: This complex requirement ensures an application's resources are protected, typically involving mechanisms for Authentication (user identity), Authorization (access rights), Encryption, Integrity, and Non-repudiation. Architects must understand the required security domain and leverage appropriate technologies like SSL or JAAS, often localizing security management in a single component.
+
+Availability: Availability is the proportion of required time an application is usable and is closely related to reliability (mean time between failures) and Recoverability (re-establishing service after failure). High availability is achieved by minimizing single points of failure, using component replication, and instituting fast, automatic failure detection and recovery mechanisms.
+
+Integration: Integration is the ease with which an application can be incorporated into a broader context, usually achieved through data integration (sharing data in formats like XML) or providing an API (hiding raw data behind controlled functions). An API offers a more controlled and robust method for integration, enforcing business rules and security while insulating clients from internal data changes.
+
+Design Trade-Offs: Quality attributes are rarely independent and often interact, meaning satisfying one attribute (e.g., security) may negatively impact another (e.g., performance or integration). A key architectural responsibility is understanding these tensions, prioritizing requirements with stakeholders, and explicitly documenting the resulting design compromises.

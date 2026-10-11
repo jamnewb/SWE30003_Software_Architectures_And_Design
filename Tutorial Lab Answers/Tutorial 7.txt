@@ -1,0 +1,97 @@
+Please carefully read the (incomplete) specification of an automated teller machine (ATM)
+given on the following page.
+For the purpose of this tutorial, you can assume that all hardware devices mentioned in the
+specification have a suitable API that can be used from the software to be developed. For
+questions 1 to 6 you can also assume that the ATM software will be “stand-alone”, that is, it
+does not need to communicate with any external servers (or similar).
+Form groups to three to four students and discuss the following questions (note the difference
+in the following process concerning the identification and allocation of responsibilities,
+compared to that in the last tutorial exercise):
+1. Identify the objects and classes that are needed in an object-oriented solution.
+
+
+2. Identify all responsibilities that the ATM’s software system needs to perform.
+
+Main class
+screen=""
+card
+cardVerification
+idleActivate()
+onCardInsert() (Collaborators: Card class)
+cardScreenActivate()
+deposit() (Collaborators: Card class)
+withdraw() (Collaborators: Card class)
+transfer() (Collaborators: Card class)
+query() (Collaborators: Card class)
+
+Card class
+pin=""
+accounts=[]
+accountBalances=[]
+cardConstructor(cardVerification) (Collaborators: Main class)
+changeBalance(account, balance) (Collaborators: Main class)
+readBalance(account, balance) (Collaborators: Main class)
+
+
+3. Assign each responsibility to one of the identified classes. Please attempt to distribute
+the responsibilities as evenly as possible throughout the system.
+
+
+4. For each class, identify possible collaborations that are needed to perform its
+responsibilities.
+
+
+5. Document all identified classes, including their responsibilities and collaborations,
+using Class-Responsibility-Collaboration (CRC) cards. Please also include a brief
+description of the purpose of each class (that could be written on the back of each card).
+
+
+6. Where applicable, identify further relationships between classes and organize the
+corresponding classes into class hierarchies. Also, highlight the application of any
+known design patterns in your design.
+
+
+7. How would you go about ensuring that any transactions that change the balance of
+accounts are reflected across all of the bank’s ATMs? Discuss the implications of
+your solution approach and provide a rationale of why the approach was chosen.
+
+
+
+
+
+
+
+
+
+
+
+An automated teller machine (ATM) is a machine through which bank customers can
+perform a number of common financial transactions. An ATM machine generally consists
+of a display screen, a bankcard reader, numeric and special input keys, a money dispenser
+slot, a deposit slot and a receipt printer.
+When the ATM machine is idle, a greeting message is displayed. The keys as well as the
+deposit slot will remain inactive until a bankcard has been entered into the bankcard
+reader.
+When a bankcard is inserted into the bankcard reader, the reader attempts to read this
+card. If the card cannot be read, the user is informed that the card is unreadable and the
+card is ejected.
+If the card is readable, the user is asked to enter a personal identification number (PIN).
+The user is given feedback as to the number of digits entered at the numeric keypad, but not
+the specific digits entered. If the PIN is entered correctly, the user is shown the main menu
+(described below). If the PIN is entered incorrectly, the user is given up to two additional
+chances to enter the PIN correctly. Failure to do so on the third attempt causes the ATM
+machine to retain the bankcard and giving the user instructions how to retrieve the
+bankcard. This is only possible by going to dedicated branches of the corresponding
+financial institution.
+The main menu of the ATM machine contains a list of transactions that the user can
+perform. These transactions are:
+ Deposit funds into an account,
+ Withdraw funds from an account,
+ Transfer fund from one account into another account, and
+ Query the balance of an account.
+The user can select any of these transactions and specify all the relevant information. Once
+a transaction has been completed, the system returns to the main menu.
+At any time after reaching the main menu and before completing any of the transactions,
+the user may press the cancel key. The transaction being specified (if there is one) is
+terminated, the user’s card is returned, a summary of all transactions (if there were any) is
+printed, and the machine again becomes idle. 

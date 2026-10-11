@@ -1,0 +1,31 @@
+Software Design Methods:
+- Modular: Focus on functions and procedures
+- Data-oriented: Focus on external data sources
+- Event-oriented: How events change states
+- Middle-out: Jackson System Development (JSD)
+- Object-oriented: Identify classes of objects and their inter-relationships
+- Process-oriented: Focus on communication between independent processing entities
+
+Methods to better handle system complexity:
+- Abstraction 
+	= More general, not associated with any specific instance
+	= Leaving out details, focusing on the important components
+	= An example is a map of a train line; it is an abstraction of a real train line
+	= An example is software architecture diagrams being abstractions of the real systems
+	= An example is classes giving the base details of objects, and objects added further details in the parameters
+- Decomposition (Divide-and-Conquer)
+- Composition
+
+Fundamental Programming Abstractions:
+- Instruction
+- Sequence
+- Condition
+- Repetition
+- Data abstraction
+- Functional abstraction
+
+A domain model captures the domain entities relevant to a given problem specification
+A domain vocabulary generally defines the meaning of domain entities
+The relationships between domain entities define an abstraction over the problem domain
+
+Design patterns are abstractions of the total pattern implementation.

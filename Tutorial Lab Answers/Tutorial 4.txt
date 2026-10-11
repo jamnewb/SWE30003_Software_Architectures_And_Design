@@ -1,0 +1,48 @@
+Hotel Information System
+1. Given the context of the hotel information system as discussed in Lecture 2 and Tutorial
+Week 3,
+a. What are the quality requirements relevant to the Check-In and Check-Out tasks?
+Robustness, Portability, Usability
+
+b. What quality requirements are similar and what not, between these two tasks?
+All of them
+
+c. Please specify each of these requirements, in a precise and verifiable manner.
+Robustness:
+"System must experience less than 10 errors over a 6 month period."
+
+Portability:
+"System must be usable on an iPhone 16 and the standard hotel computer with Windows 10 installed."
+
+Usability:
+"Users must be able to understand and use the main functions of the solution after 5 minutes of play time."
+
+2. In general, considering all working areas, what would be the top 3 to 5 quality attributes
+applicable to the Hotel Information System?
+Robustness, Portability, Usability
+
+
+3. What are the general software quality attributes? Describe each of the software quality
+attributes.
+Modifiability: System's ability and ease to be added to
+Availability: System's uptime
+Usability: System's ease of use
+Security: System's ability to protect and mitigate against attacks
+Reliability: System's ability to not experience errors (measured in downtime/time spent maintaining system)
+
+
+4. What are some forms of scalability? How do they work?
+Scale-up: Scaling vertically
+Scale-out: Scaling horizontally
+
+5. What is Throughput? Compare and contrast average and peek throughput.
+Throughput is the rate at which data is successfully transferred through a system or network, or the quantity of work a system completes in a given time. It is typically measured in TPS or transactions per second.
+
+6. How does the quality attribute of security affect availability in terms of the authentication
+and the authorization process?
+If strict security measured are put in place for a system to be highly secure, it can disallow certain users from signing up who may not have the capabilities or the want to set up MFA for example - thereby decreasing availability.
+
+7. Software qualities can be categorised into two (2) broad categories: external and internal.
+Please explain both, including an example. 
+External qualities are those that are affected by or can be seen visually. An example is a user interacting with an interface and getting an error message.
+Internal qualities are those unseen metrics that affect the innerworkings of a solution. An example of this is the performance of a solution as measured by their throughput.

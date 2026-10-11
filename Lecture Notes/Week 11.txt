@@ -1,0 +1,40 @@
+A view is a representation of a coherent set of architectural elements, as written by and read by stakeholders. It consists of a representation of a set of [architectural] elements and the relationships amongst them."
+
+Views focus on specific aspects of a software system by using appropriate abstractions.
+
+Different Views:
+- Component and Connector:
+	= Focus on run-time computational entities (processing elements) and their means of communication
+	= What are the main executing components and how do they interact?
+- Allocation:
+	= Focus on computational entities and their physical environment (how does one interact with the app through the interface? Buttons? Keyboard?)
+	= What processing node does each component execute on?
+- Module:
+	= Focus on code units and their responsibilities
+	= What packaging mechanisms are used to specify/implement each architectural element? How are these "packages" inter-related?
+
+Kruchten's 4+1 View:
+- Logical view (functionality provided)
+- Development view (developer's perspective)
+- Process view (code processes)
+- Physical view (mapping processes onto communication nodes)
+All 4 different views are takes on the same scenario.
+
+IEEE 1471 defines a methodology for documenting architectures, which includes using what is known as viewpoints. A viewpoint is specified by:
+- Viewpoint name
+- The stakeholders concerned with it
+- Stakeholder concerns to be addressed by it
+- Viewpoint language (what is involved in the concern - components, interfaces, etc. + diagrams)
+- Source
+
+Pseudocode can also be used to further demonstrate architecture designs.
+
+Design evaluations can result in clear communication of critical design issues,  verification of critical architectural drivers and quality attributes.
+
+Architecture Tradeoff Analysis Method:
+- Heavy-weight
+- Comprehensive process (5 phases/9 stages)
+- Involves most stakeholders
+- Provides a exhaustive analysis of system, uncovering any issues
+
+Quality Utility Tree: Tree diagram with higher nodes being quality attributes, the lesser nodes being quality requirements ("data integrity", "new product categories", etc.) and the last nodes are scenarios of how to improve those requirements.

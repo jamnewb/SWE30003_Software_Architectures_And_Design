@@ -1,0 +1,106 @@
+A framework implements a "generic" software architecture, and is not a design pattern itself
+
+Why are patterns used?
+- Patterns enable widespread reuse of software structures
+- Patterns improve communication within and across software development teams
+- Patterns explicitly capture knowledge that experienced developers already understand implicitly
+- Useful patterns arise from practical experience
+- Patterns facilitate training of new developers
+- Patterns help to transcend "programming language-centric" viewpoints
+
+Idioms are common programming techniques and conventions. They are often language-specific.
+
+Patterns document common solutions to design problems. They are language-independent.
+
+Libraries are collections of functions, procedures or other software abstractions that can be used in many applications.
+
+Frameworks are open libraries that define the generic architecture of an application, and can be extended by adding or deriving new classes. (They make use of idioms and patterns)
+
+Delegation is an idiom that states to delegate shared behavior to another object if inheritance is not permitted. (When a Chessboard object is asked to undo a move, it delegates the work to the corresponding Move object.)
+
+public class ChessBoard {
+	...
+	public void undoMove( {
+		if (!(this.moves.isEmpty())) {
+			Move lastMove = this.moves.lastElement();
+			lastMove.undo (this);
+			this.moves.removeElement(lastMove);
+		}
+	}
+}
+
+Interface idiom states that if a concrete class provides a service and therefore the service can only be accessed through its children, just create an interface for the service, that way any class that implements the interface can provide the service.
+
+Pattern Format:
+- Pattern name
+- Pattern classification (should convey the general idea of the pattern)
+- Problem forces:
+	= Intent (short statement of rationale and intended use)
+	= Motivation (a problem scenario and example solution)
+	= Applicability (in which situations can the pattern be applied)
+- Solution:
+	= Structure (class and scenario diagrams)
+	= Participants (classes/objects and their responsibilities)
+	= Collaborations (how classes/objects carry out responsibilities)
+Consequences:
+	= Implementation (pitfalls, hints, techniques, language issues)
+	= Sample code
+	= Known uses (examples of usage in real systems)
+	= Related patterns
+
+Patterns are usually used in combination with others (resulting in a pattern system). An example of this is the Observer pattern being used to keep objects in separate Layers in a Layer pattern independent.
+
+Template Method:
+Name: Template Method
+Classification: Class Behavioural
+Intent: Define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure
+Motivation: An application framework provides Application and Document classes. Application is responsible for opening existing documents stored in an external format. An opened document is represented by a Document instance. An application built with the framework should subclass Application and Document for specific kinds of documents. Subclasses can be drawn from different kinds of documents like opening a PDF would be different to opening a Word document.
+Applicability:
+The template method should be used to implement the non-varying parts of an algorithm once and allow subclasses to implement the parts that may vary. The template method should be used to refactor common behavior among subclasses into a common superclass. The template method should be used to control subclass extensions.
+Participants:
+- AbstractClass (e.g. Application)
+	= Declares abstract primitive operations that concrete subclasses define to implement steps of an algorithm
+	= Defines a template method that implements the skeleton of an algorithm
+	= The template method calls the primitive operations as well as operations defined in AbstractClass or elsewhere
+- ConcreteClass (e.g. MyApplication)
+	= Implements the primitives operations to carry out subclass-specific steps of the algorithm
+Collaborations:
+- ContreteClass relies on AbstractClass to implement the non-varying steps of the algorithm
+Consequences:
+- Template methods are a fundamental technique for factoring out common behavior in class libraries
+- They lead to an inverted control structure since a parent class calls the operations of a subclass and not the other way around
+Known Uses:
+Template methods are so fundamental that they can be found in almost every abstract class.
+Related Patterns:
+Factory Methods and Strategy.
+
+Factory Method:
+Problem: How to define an interface to create objects, but defer the decision which specific class to instantiate?
+Solution: Introduce a Factory Method in a base class (or interface) and delegate the decision which concrete classes to instantiate to subclasses (or implementing classes)
+this.chooseRandomClass()
+
+Pattern Strategy:
+How to define a family of algorithms and make them interchangeable, independent of clients that may use them?
+Solution: Define a common interface for the family of algorithms and have specific implementations implement this interface
+Draw->Shape->->->Square, Circle, Triangle
+
+Composite:
+Problem: How do you manage a part-whole hierarchy of objects in a consistent way?
+Solution: Define a common interface (or abstract base class that both parts and composites implement (or inherit from)
+Example: A Java GUI Container contains GUI Components and a GroupElement contains DrawingElements
+
+Observer:
+Problem: How can an object inform arbitrary clients when it changes state?
+Solution: Clients implement a common Observer interface and register with the "observable" object; the object notifies its observers when it changes state
+
+Null Object:
+Problem: How do you avoid cluttering your code with tests for null object pointers?
+Solution: Introduce a Null Object that implements the interface you expect, but does nothing.
+
+Singleton:
+Problem: How do you ensure that a class has only a single instance and a well-defined access point to it?
+Solution: Introduce a Singleton class that keeps track of a static reference to its only instance, and provide a static method to access this sole instance.
+
+Command:
+Problem: How do you let clients to be parameterized with different requests queue or log requests, and support undoable operations?
+Solution: Encapsulate requests in Command objects that can be passed around and executed where (and when) necessary.

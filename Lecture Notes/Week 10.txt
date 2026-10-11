@@ -1,0 +1,138 @@
+Data-centered architecture:
+Characterized by having a central repository that all the processes need to access. This includes if a process needs to read data out or update data in.
+
+Disadvantages:
+- One point of dependency, can bottleneck the system
+
+Advantages:
+- Loose-coupling of other components, they do not rely on each other, only the central repository
+
+
+Data-flow architecture:
+Different pieces of data usually of a similar type are passed around from component to component, with each component completing processing on the data along the way. In other words, the processing completed on the data is ordered, although possibly not entirely linear.
+
+Disadvantages:
+- Time and space cost related to processing and reading data across all the components in the system
+
+Advantages:
+- Loose-coupling of other components, they are relatively independent
+
+Enterprise (Software) Systems are characterized by:
+- They are distributed
+- Integration
+- Business process
+- Cross-organization, cross-geography
+- Large-scale
+- Addressable
+
+SaaS (Software as a Service):
+- Independently deployable
+- Self-contained
+- Self-describing
+- Discoverable on the web
+- Services can be put together with others to compose a larger software system
+
+Web Services (W3C Definition, DOES NOT APPLY TO RESTFUL WEB SERVICES):
+- Identified by a URL, whose public interfaces and bindings are defined and described using XML
+- Its definition can be discovered by other software systems
+- These systems may then interact with the Web service using XML based messages conveyed by Internet protocols (not necessarily Web protocols)
+
+Advantages of Web Services for Business:
+
+Within an enterprise (Enterprise Application Integration):
+- Accelerate and reduce the cost of integration
+- Save on infrastructure deployment & management costs
+- Reduce skill requirements
+- Improve reuse
+- Improve flexibility leads quicker response to market opportunities
+
+Between enterprises (e-Business integration)
+- Providing service to a company's customers (e.g. An insurance company wishes to link its systems to the systems of a new institutional customer (IAG for RACV, NRMA etc)
+- Accessing services from a company's partners and suppliers (e.g. dynamically link to new partners and suppliers to offer their services to complement the value the company provides (Master Card from Coles)
+- Standards and common infrastructure reduces the barriers
+- Simplicity and reuse accelerates deployment
+- Dynamics opens new business opportunities
+
+Stateless or stateful services:
+- Services that can be invoked repeatedly without having to maintain context or state are called stateless
+	= Simple informational services are stateless
+- Services that require their context to be preserved from one invocation to the next are called stateful
+	= Complex services (business processes) typically involve stateful interactions
+
+Service granularity:
+- Complex services exhibit coarse-grained granularity, where larger and richer data structures are used and multiple other services and end-users are interacted with in one or more sessions
+- Simple services exhibit fine granularity, where they are atomic and discrete in nature and have a usual request/reply mode of operation
+
+Synchronous communication is where you a client sends a message to a server and has to wait to get a response to continue executing.
+
+Asynchronous communication is where a client employs a "send and forget" approach, where it sends the message and continues executing directly after.
+
+API implementations:
+- Service interface: Service functionality is visible externally and provides means to access this functionality
+- Service implementation: Provides an interface whose implementation details are hidden
+
+Service Oriented Architecture:
+- Service Client searches for a Service Provider using the Service Registry (the Service Registry needs to be updated every time the Service Provider changes something about the web service)
+- When the Service Client has found the service from the Service Provider, it binds to the Service provider and a role is attached to them
+
+Web Architectural Styles:
+- Method-oriented RPC (Remote Procedure Call)
+Interface: Method, parameters
+Interaction: synchronous request-response, request-acknowledge
+More of a standard architecture, with classes calling each other.
+Remote Procedure Calls are related to how data gets transferred between 2 machines. Considering the levels of abstraction needed to send it over the network, it handles translating the data in such a way.
+- Highly fragile as considering the hard-coding of the methods, one change to them can break clients
+- Message-oriented (Document style)
+Interface: Domain specific operation, Message type
+Interaction: Various synch/asynch, request-response, one way, solicit-notify
+Contents of invocation are sent to the server and stored in a document.
+Is literally just an asynchronous broker architecture where the broker is called an integration broker.
+- Resource-oriented
+Interface: generic CRUD, Resource ID, media type
+Interaction: synchronous request-response, request-acknowledge
+Services provide CRUD functionality to some data.
+- Event-oriented
+Interface: event type
+Interaction: Subscribe-notify publish-subscribe-notify
+Every time its state changes, it will generate an event. This is so clients using it can asynchronously respond to the events it produces.
+- Most decoupled out of the standard approaches
+
+Web Application Approaches:
+- Web Service Stands "WS*"
+	= Services send messages using SOAP messages and WSDL interface descriptions
+	= It is middleware based
+	= Usually uses an RPC, message-oriented or event-oriented architectural style
+- REST-based (Representational State Transfer)
+	= Database-based
+	= Usually uses a resource-oriented architectural style
+- Microservices
+	= Usually RESTful too
+
+WS* SOAP Architectures use the SOAP application protocol and use the HTTP transport protocol to carry SOAP messages.
+
+Messages can be exchanged in different ways - not just client-request->server-response->client. Both push and pull interaction models are supported at the interface level. The different exchange patterns include:
+- One-way messaging: Service consumer->service provider
+- Request/Response messaging: Service consumer->service provider->Service consumer
+- Notification messaging: Service provider->service consumer
+- Solicit/Response messaging: Service provider->service consumer->service provider
+
+WSDL facilitates service communications and getting it onto the web.
+
+SOAP is a messaging protocol used by services that uses an XML-based scheme to encode messages and uses HTTP as a means of transport. This can be seen with clients wanting to send a message, it being encoded into a SOAP message, that message being sent to a server and it getting decoded once received.
+
+To implement a REST web service, an OO resource-oriented software system is designed and implemented, with an API service deployed with its own interface.
+REST services are referenced with a unique URI:
+Protocol + server:port - http://server:port
+Path - /path/to/resource
+Query - ?p1=v1&p2=v2
+
+Microservices:
+- A type of SOA
+- Business functionality/capability oriented partition
+- Modular (function as a modular, not an application as a module)
+- Small (capability) & light-weight (technology: REST)
+- Self-contained & highly deployable
+- Oriented towards development, delivery & deployment
+- Scalable
+- Simple (fine granularity)
+With the ease of deployment, some web services use multiple microservices, and in some cases where a web service is experiencing an emergency, some microservices can quickly be multiplied deploying more and more until the issues are mitigated against.

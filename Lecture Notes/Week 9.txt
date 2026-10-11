@@ -1,0 +1,68 @@
+The Key Word in Context (KWIC) index system accepts an ordered set of lines, each line is an ordered set of words, and each word is an ordered set of characters. Any line may be "circularly shifted" by repeatedly removing the first word and appending it at the end of the line. The KWIC index system outputs a listing of all circular shifts of all lines in alphabetical order [ignoring case]."
+
+So basically it gets an input of some lines like:
+
+My name Jeff
+I go fishing
+
+And it takes the first word and puts it to the end of the line such like:
+
+name Jeff My
+go fishing I
+
+and it repeats this until it has all of the combinations:
+
+name Jeff My
+go fishing I
+Jeff My name
+fishing I go
+My name Jeff
+I go fishing
+
+and then it outputs all the lines in alphabetical order
+
+fishing I go
+go fishing I
+I go fishing
+Jeff My name
+My name Jeff
+name Jeff my
+
+Different architectures can be used to support this, such as:
+- Shared-memory Architecture 
+- Abstract Data Type Architecture
+- Implicit invocation architecture
+- Pipe-and-Filter architecture (Input-->Circular Shift-->Shifted Lines-->Alphabetizer-->Sorted, Shifted Lines)
+
+An architectural tactic is a transformation on an architecture or a change to the input to a system that results in the improvement of a specific quality attribute. This can be seen with:
+- Information hiding -> improves modifiability
+- Redundancy -> improves availability, reliability
+- Reducing the arrival rate of requests -> improves response time
+
+Scalability tactics:
+- Scale-up (vertical-scaling)
+- Scale-out (horizontal scaling)
+- Moderation of the arrival rate of requests
+
+Availability tactics:
+- Fault detection
+- Recovery Preparation and Repair
+- Recovery Reintroduction
+- Prevention
+Maintaining efficient system error/emergency mitigation protocols results in less downtime->a more available solution
+
+Modifiability tactics:
+- Localize changes
+- Prevention of ripple effect
+- Defer binding time
+
+Performance tactics:
+- Resource demand
+- Resource management
+- Resource arbitration
+
+Security tactics:
+- Resisting attacks
+- Detecting attacks
+- Recovering from an attack
+

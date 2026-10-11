@@ -1,0 +1,53 @@
+1. Considering the notions of Product and Domain around Lecture 2, Slide 25), is the
+receptionist part of the product or part of the domain? Please explain!
+The receptionist is part of the domain, this is because those in the domain interact with the product through Product I/O. The receptionist engages in this through interacting with the Product I/O over their computer at their desk at the reception of the building.
+
+2. Given the context of the hotel information system as discussed in Lecture 2, describe the
+Check-Out task in the Task & Support style.
+Task: Check-out
+Purpose: To check the guest out of the hotel
+Conditions: The guest has come to reception to check-out
+Frequency: Once per hour
+Critical: When >30 guests attempt to check-out at once
+Sub-tasks: 
+1. Guest comes to reception
+Problem: Guest may exceed their stay
+2. Guest details are verified	Example solution: Verify details with system
+Problem: Guest may use an untrustworthy service to provide their ID
+3. Guest is removed from guest list	Example solution: Delete guest in system
+3a. Variant: Guest may want to extend their stay
+4. Guest exits
+Problem: Guest may not exit
+
+3. Identify the typical tasks that a Hotel Information System must support, create a
+corresponding workflow, and visualize the resulting workflow using a suitable notation,
+and describe it as a high-level task.
+
+
+4. What are tacit requirements? Is it possible to perform a validation check on tacit
+requirements?
+
+
+5. The domain model for the hotel information system (around Lecture 2, Slide 31) is
+incomplete. For example, in most hotels, rooms are by room type (single, double, family
+etc.). Furthermore, overbooking of rooms is not supported, either. Extend the domain
+model so that these extensions can be covered.
+
+
+6. The Check-In task (around Lecture 2, Slide 35) handles two situations:
+a) The guest has booked in advance;
+b) The guest has not booked in advance, but hopes there is a free room available.
+Do the following:
+ 1) Split the task description into two task descriptions Check-In a Booked Guest and
+ Check-In a Non-Booked Guest.
+
+
+ 2) Discuss the difference between the one-task solution and the two-task one. Which
+ approach is more suitable?
+I believe the two-task approach is more suitable considering should the guest have booked in advance, there is not much work to be completed on the solution, with the receptionist only needing to verify their identity and hand in their key. Considering this, having the booking in advance simply being a variant with the one-task approach makes it harder to tell that certain steps are reserved for the situation in which a booking has not been made in advance. Overall this can make the booking in advance variant seem like more work than it actually is, which does not support the aim of the task description which is to communicate the software solution to the stakeholders effectively.
+
+7. Many hotels apply a policy of overbooking, i.e. they book more rooms than the hotel
+actually has. In practice, not all booked guests turn up and there is no real problem.
+However, in case too many guests turn up, an emergency solution needs to be found
+(e.g., allocating guest to a different hotel). Please extend the Check-In task to handle this
+situation.

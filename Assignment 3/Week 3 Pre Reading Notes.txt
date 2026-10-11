@@ -1,0 +1,43 @@
+- All but the most trivial applications have non-functional requirements
+- Non-functional requirements can be expressed in terms of quality attribute requirements
+- Quality attribute requirements must be SMART (Specific, Measurable, Achievable, Relevant, and Time-bound)
+- Can be hard to validate and test quality attribute requirements
+- Can analyze the code to achieve a better estimation of if software will meet quality attribute requirements
+- Applications that do not meet performance quality attribute requirements tend to blow up and have a negative outcome
+- Performance quality attribute requirements relate to how the specifications of a device perform when running the application.
+- Throughput is the measure of the amount of work an application needs to complete in a unit of time - either transactions per second (tps) or messages per second (mps)
+- Response time is the latency of an application processing a transaction
+- Amount of processing for a transaction is application specific, so the exact workload or transaction mix must be defined in application-specific terms
+- Deadlines is the time/date an application must complete a task by
+- As the workload increases, response time increases and throughput decreases, so the application must scale-up or scale-out to ensure response times stay low, and throughput stays high
+- Scale-up means to better the specs of a system (get better CPU)
+- Scale-out means to get more devices to distribute the load (load-balancing)
+- Data-size relates to how the application will perform should the data its retrieving or dealing with increases in size (how would a messaging service deal with messages that are very long)
+- Deployment relates to how deploying or modifying the applications changes depending on the size of a userbase, including effort for distribution, configuration and updating with new versions
+- Modifiability relates to how easy it is to make a change to an application, in other words its flexibility (company knows they need to provide Linux support in future and needs to quantify the cost of this change)
+- Security involves (authentication - users need to prove their identity, authorization - users are allowed to perform functions according to their permissions, encryption - is the data encrypted during transmission, integrity - is the data unchanged, and non-repudiation - e.g for a message it is made clear the role of both parties in the sending and receiving)
+- Availability relates to how long an application is unavailable when it experiences a failure
+- Recovery is how an application responds to a failure, how long it takes to become available again and how well it restores any data lost during the failure
+- Integration relates to how many different ways an application and its data can be used and manipulated (this is aided by data integration and having an API)
+- Portability relates to how easily the application can be executed under different hardware
+- Testability relates to how easily the application can be tested
+- Supportability relates to how easy it is to support the application once it is deployed
+- It is important to focus on only the most important quality attribute requirements to the application, as it is very difficult and expensive to exceed in all of them
+
+GAY FART:
+- To get around the quality attribute requirement specific language like "events", "failure" and "user input", quality attribute scenarios are used
+- Stimulus: Something happen to application
+- Stimulus source: Where that something come from
+- Response: What the application does in response to that something
+- Response measure: How well did the application respond to the something
+- Environment: The set of circumstances the application and the something performed under
+- Artifact: The portion of the system the something is concerned with
+- Design decisions can be categorized to identify the areas most likely where architectural errors are going to occur
+- Allocation of responsibilities involves identifying the important application responsibilities and what performs them
+- Coordination of responsibilities involves identifying the elements in an application that must work together, and when they do work together the properties of that responsibility
+- Data model involves choosing what data to represent and organizing them in a productive way
+- Management of resources involves identifying what resources are managed by the application, what within the application manages the resource, how the resources are shared and the arbitration strategies employed when there is contention, and what the impact of overloading the resources has on the application. (Resources = Hardware)
+- Mapping among architectural elements might be to do with the relationships between code/hardware/result of execution
+- Binding time decisions is just making decisions based on the quality attribute requirements and how much wiggle room you can have with it
+- Choice of technology involves determining what's available, detetrmining if the right tools exist for the technology (IDEs, testing tools, etc.), determining the expertise of the staff with the technology, determining the side effect of the technology and determining if the technology is compatible with the existing technology being used
+
